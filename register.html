@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>STI Academy - Register</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        body {
+            margin:0;
+            font-family:Arial;
+            background:#f5f7fb;
+        }
+
+        header {
+            background:#0f172a;
+            color:white;
+            text-align:center;
+            padding:15px;
+        }
+
+        nav {
+            background:#1e293b;
+            text-align:center;
+            padding:10px;
+        }
+
+        nav a {
+            color:white;
+            margin:10px;
+            text-decoration:none;
+        }
+
+        .container {
+            padding:20px;
+        }
+
+        .card {
+            background:white;
+            padding:15px;
+            border-radius:10px;
+            margin-bottom:15px;
+        }
+
+        input, select {
+            width:100%;
+            padding:10px;
+            margin:8px 0;
+            border:1px solid #ccc;
+            border-radius:5px;
+        }
+
+        button {
+            width:100%;
+            padding:10px;
+            background:#2563eb;
+            color:white;
+            border:none;
+            border-radius:5px;
+            font-weight:bold;
+        }
+
+        .btn {
+            display:inline-block;
+            margin-top:10px;
+            padding:10px;
+            background:#25D366;
+            color:white;
+            text-decoration:none;
+            border-radius:5px;
+            text-align:center;
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <h2>STI Academy Registration</h2>
+</header>
+
+<nav>
+    <a href="index.html">Home</a>
+    <a href="courses.html">Courses</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+    <a href="register.html">Register</a>
+</nav>
+
+<div class="container">
+
+    <!-- 🧾 REGISTRATION FORM -->
+    <div class="card">
+        <h3>Student Registration Form</h3>
+
+        <form>
+            <input type="text" placeholder="Full Name" required>
+            <input type="tel" placeholder="Phone Number" required>
+            <input type="email" placeholder="Email (optional)">
+
+            <select required>
+                <option value="">Select Course</option>
+                <option>Web Development (6 Months)</option>
+                <option>Graphic Design (1 Month)</option>
+                <option>Video Editing (1 Month)</option>
+                <option>Social Media Management (1 Month)</option>
+            </select>
+
+            <input type="text" placeholder="Location">
+
+            <button type="submit">Submit Registration</button>
+        </form>
+    </div>
+
+    <!-- 💰 PAYMENT DETAILS -->
+    <div class="card">
+        <h3>💰 Payment Instructions</h3>
+
+        <p><b>Bank:</b> OPay</p>
+        <p><b>Account Name:</b> Lawretta Osayamen Ogboe</p>
+        <p><b>Account Number:</b> 9159641570</p>
+        <p><b>Amount:</b> ₦3,000</p>
+
+        <p>After payment, click below to send proof to admin:</p>
+
+        <a class="btn"
+href="https://wa.me/2348131525874?text=Hello%20Admin,%20I%20have%20paid%20for%20STI%20Academy.%20Here%20is%20my%20payment%20proof."
+target="_blank">
+Send Payment Proof to Admin
+</a>
+          
+        </a>
+    </div>
+
+</div>
+
+</body>
+</html> 
