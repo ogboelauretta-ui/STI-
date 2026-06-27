@@ -5,11 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <style>
-        body {
-            margin:0;
-            font-family:Arial;
-            background:#f5f7fb;
-        }
+        body { margin:0; font-family:Arial; background:#f5f7fb; }
 
         header {
             background:#0f172a;
@@ -30,12 +26,17 @@
             text-decoration:none;
         }
 
-        .container {
-            padding:20px;
-        }
+        .container { padding:20px; }
 
         .card {
             background:white;
+            padding:15px;
+            border-radius:10px;
+            margin-bottom:15px;
+        }
+
+        .payment-box {
+            background:#e0f2fe;
             padding:15px;
             border-radius:10px;
             margin-bottom:15px;
@@ -58,17 +59,6 @@
             border-radius:5px;
             font-weight:bold;
         }
-
-        .btn {
-            display:inline-block;
-            margin-top:10px;
-            padding:10px;
-            background:#25D366;
-            color:white;
-            text-decoration:none;
-            border-radius:5px;
-            text-align:center;
-        }
     </style>
 </head>
 
@@ -88,50 +78,72 @@
 
 <div class="container">
 
-    <!-- 🧾 REGISTRATION FORM -->
+    <!-- PAYMENT DETAILS DISPLAYED HERE -->
+    <div class="payment-box">
+        <h3>💳 Payment Details</h3>
+        <p><b>Bank:</b> OPAY</p>
+        <p><b>Account Name:</b> Lauretta Osayame Ogboe</p>
+        <p><b>Account Number:</b> 9159641570</p>
+        <p>After payment, fill the form below and submit.</p>
+    </div>
+
+    <!-- FORM -->
     <div class="card">
         <h3>Student Registration Form</h3>
 
-        <form>
-            <input type="text" placeholder="Full Name" required>
-            <input type="tel" placeholder="Phone Number" required>
-            <input type="email" placeholder="Email (optional)">
+        <form id="regForm">
 
-            <select required>
+            <input type="text" id="name" placeholder="Full Name" required>
+
+            <input type="tel" id="phone" placeholder="Phone Number" required>
+
+            <input type="email" id="email" placeholder="Email (optional)">
+
+            <select id="course" required>
                 <option value="">Select Course</option>
-                <option>Web Development (6 Months)</option>
-                <option>Graphic Design (1 Month)</option>
-                <option>Video Editing (1 Month)</option>
-                <option>Social Media Management (1 Month)</option>
+                <option value="Web Development">Web Development</option>
+                <option value="Graphic Design">Graphic Design</option>
+                <option value="Video Editing">Video Editing</option>
+                <option value="Social Media Management">Social Media Management</option>
             </select>
 
-            <input type="text" placeholder="Location">
+            <input type="text" id="location" placeholder="Location">
 
-            <button type="submit">Submit Registration</button>
+            <button type="submit">I Have Paid - Submit</button>
+
         </form>
-    </div>
-
-    <!-- 💰 PAYMENT DETAILS -->
-    <div class="card">
-        <h3>💰 Payment Instructions</h3>
-
-        <p><b>Bank:</b> OPay</p>
-        <p><b>Account Name:</b> Lawretta Osayamen Ogboe</p>
-        <p><b>Account Number:</b> 9159641570</p>
-        <p><b>Amount:</b> ₦3,000</p>
-
-        <p>After payment, click below to send proof to admin:</p>
-
-        <a class="btn"
-href="https://wa.me/2348131525874?text=Hello%20Admin,%20I%20have%20paid%20for%20STI%20Academy.%20Here%20is%20my%20payment%20proof."
-target="_blank">
-Send Payment Proof to Admin
-</a>
-          
-        </a>
     </div>
 
 </div>
 
+<script>
+document.getElementById("regForm").addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    let name = document.getElementById("name").value;
+    let phone = document.getElementById("phone").value;
+    let email = document.getElementById("email").value;
+    let course = document.getElementById("course").value;
+    let location = document.getElementById("location").value;
+
+    let message =
+`*🎓 STI Academy Payment Confirmation*
+
+I have paid for this course, please confirm.
+
+Name: ${name}
+Phone: ${phone}
+Email: ${email}
+Course: ${course}
+Location: ${location}`;
+
+    let whatsappNumber = "2348131525874";
+
+    let url = "https://wa.me/" + whatsappNumber + "?text=" + encodeURIComponent(message);
+
+    window.open(url, "_blank");
+});
+</script>
+
 </body>
-</html> 
+</html>
